@@ -82,12 +82,6 @@ $cars = [
   "Opel" => $opel
 ];
 
-foreach ($cars as $car) {
-  foreach ($car as $key => $value) {
-      echo "$key:$value\n";
-  }
-}
-
 foreach ($cars as $key => $car) { 
   echo 'CAR ' . $key . '<br>'; 
   echo $car['model'] . ' ' . $car['speed'] . ' ' . $car['doors'] . ' ' . $car['year'] . ' ' . "<br><br>"; 
@@ -95,9 +89,19 @@ foreach ($cars as $key => $car) {
 
 // Задание 6
 echo '<table>';
-for ($i = 0; $i <= 10; $i++) {
-  echo '<td>';
-
-  echo '</td>';
+for ($i = 1; $i <= 10; $i++) {
+  echo '<tr>';
+    for ($j = 1; $j <= 10; $j++) {
+        echo '<td style="width:25px;height:30px;text-align:center;">';
+        if(($i % 2) == 0 && ($j % 2) == 0){
+            echo '(' . $i * $j . ')';
+        }elseif(($i % 2) != 0 && ($j % 2) != 0){
+            echo '[' . $i * $j . ']';
+        } else {
+            echo $i * $j;
+        }
+        echo '</td>';
+    }
+  echo '</tr>';
 };
 echo '</table>';
