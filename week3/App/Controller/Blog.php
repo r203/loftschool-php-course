@@ -57,4 +57,9 @@ class Blog extends AbstractController
     $message->save();
     $this->redirect('/blog');
   }
+
+  public function twig()
+  {
+    return $this->view->renderTwig('test.twig', ['var' => 'ololo']);
+  }
 }
